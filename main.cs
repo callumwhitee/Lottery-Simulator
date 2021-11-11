@@ -7,6 +7,14 @@ class Program {
   static int[] userNumbers = new int[6];
   static int max = 200;
   static int length = randomNumbers.Length;
+  static bool[] correctNumbers = {
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  };
 
 
   public static void Main (string[] args) {
@@ -48,10 +56,18 @@ class Program {
       {
         if(userNumbers[i] == randomNumbers[j])
         {
-          Console.WriteLine("yayy");
+          correctNumbers[i] = true;
         }
       }
     }
+    
+
+
+    for(int l = 0; l < correctNumbers.Length; l++)
+    {
+      Console.WriteLine(correctNumbers[l]);
+    }
+
   }
 
   static void Numbers()
