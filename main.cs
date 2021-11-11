@@ -20,6 +20,8 @@ class Program {
   public static void Main (string[] args) {
     GenerateNumbers();
     Numbers();
+    TakeNumbers();
+    Numbers();
     userInput();
     Match();
   }
@@ -60,14 +62,20 @@ class Program {
         }
       }
     }
-    
+  }
 
-
-    for(int l = 0; l < correctNumbers.Length; l++)
-    {
-      Console.WriteLine(correctNumbers[l]);
-    }
-
+  static void TakeNumbers()
+  {
+    for(int j = 0; j < userNumbers.Length; j++)
+      {
+        for(int g = 0; g < userNumbers.Length; g++)
+        {
+          if(randomNumbers[j] == randomNumbers[g])
+          {
+            randomNumbers[g] = 0;
+          }
+        }
+      }
   }
 
   static void Numbers()
@@ -79,4 +87,30 @@ class Program {
     Console.ReadKey();
     Console.Clear();
   }
+
+  static void DeclareWinnings()
+  {
+    for(int i = 0; i < correctNumbers.Length; i++)
+    {
+      for(int j = 0; j < userNumbers.Length; j++)
+      {
+        for(int g = 0; g < userNumbers.Length; g++)
+        {
+          if()
+        }
+      }
+
+
+      if(correctNumbers[i] == true)
+      {
+        Console.WriteLine("You Got ");
+      }
+    }
+  }
+
+
+
+ 
+
+
 }
