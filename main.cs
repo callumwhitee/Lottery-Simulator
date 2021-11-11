@@ -19,7 +19,7 @@ class Program {
 
   public static void Main (string[] args) {
     GenerateNumbers();
-    Numbers();
+    validateNumbers();
     userInput();
     Match();
     DeclareWinnings();
@@ -67,6 +67,10 @@ class Program {
 
   static void Numbers()
   {
+
+    // debug perposses
+
+
     for(int i = 0; i < randomNumbers.Length; i++)
     {
       Console.WriteLine(randomNumbers[i]);
@@ -77,19 +81,48 @@ class Program {
 
   static void DeclareWinnings()
   {
-    Console.Write("Your Lucky Numbers Are ");
+    int[,] winnings = {
+      {0, 0},
+      {1, 0},
+      {2, 0},
+      {3, 0},
+      {4, 1000},
+      {5, 10000},
+      {6, 1000000}
+    };
+
+    int runningTotal = 0;
     for(int i = 0; i < correctNumbers.Length; i++)
     {
-      
-
-
-      if(correctNumbers[i] == true)
+      if(correctNumbers[i])
+        runningTotal++;
+    }
+    for(int j = 0; j < winnings.GetLength(0); j++)
+    {
+      if(runningTotal == winnings[j, 0])
       {
-        Console.Write(randomNumbers[i] + ", ");
-        Thread.Sleep(2000);
+        Console.WriteLine("You Won £" + winnings[j, 1]);
+        break;
       }
     }
   }
+
+  static void validateNumbers()
+  {
+    for(int i = 0; i < userNumbers.Length - 1; i++)
+    {
+      for(int j = 0; j < userNumbers.Length - 1; j++)
+      {
+        if((randomNumbers[i] == randomNumbers[j]) && (i != j))
+        {
+          Random random = new Random();
+          randomNumbers[i] = random.Next(0, max);
+        }
+      }
+    }
+  }
+
+  
 
 
 

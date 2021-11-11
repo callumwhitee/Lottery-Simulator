@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7L6yrIiGARJRuXpvTB9qlBbLKvEj7TawOVO4zvb3nzPjKLb9Wnjb2hajBwBp+BOuojrzwiol6pXsXnjOOx9SZQ==",
+  "dgSpecHash": "bYWnZ/5OUKJuqsin6TLbBuGRiOz+kXQJGyCkf0zZC6MTmlL+F5YSML/YU886/hh49UyzPUPKsyPZW5azD2rikg==",
   "success": true,
-  "projectFilePath": "/home/runner/LotterySimulator/main.csproj",
+  "projectFilePath": "A:\\code\\cs\\LotterySimulatorDT\\main.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
