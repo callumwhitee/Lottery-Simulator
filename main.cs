@@ -36,7 +36,7 @@ class Program {
     for(int i = 0; i < userNumbers.Length; i++)
     {
       Console.Write("> ");
-      userNumbers[i] = Console.ReadLine();
+      userNumbers[i] = Convert.ToInt16(Console.ReadLine());
     }
   }
 
@@ -61,6 +61,6 @@ class Program {
       Console.WriteLine(randomNumbers[i]);
     }
     Console.ReadKey();
-    Thread.Sleep();
+    Console.Clear();
   }
 }
