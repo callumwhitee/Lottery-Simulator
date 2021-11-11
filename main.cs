@@ -20,10 +20,9 @@ class Program {
   public static void Main (string[] args) {
     GenerateNumbers();
     Numbers();
-    TakeNumbers();
-    Numbers();
     userInput();
     Match();
+    DeclareWinnings();
   }
 
 
@@ -64,19 +63,7 @@ class Program {
     }
   }
 
-  static void TakeNumbers()
-  {
-    for(int j = 0; j < userNumbers.Length; j++)
-      {
-        for(int g = 0; g < userNumbers.Length; g++)
-        {
-          if(randomNumbers[j] == randomNumbers[g])
-          {
-            randomNumbers[g] = 0;
-          }
-        }
-      }
-  }
+  
 
   static void Numbers()
   {
@@ -90,20 +77,16 @@ class Program {
 
   static void DeclareWinnings()
   {
+    Console.Write("Your Lucky Numbers Are ");
     for(int i = 0; i < correctNumbers.Length; i++)
     {
-      for(int j = 0; j < userNumbers.Length; j++)
-      {
-        for(int g = 0; g < userNumbers.Length; g++)
-        {
-          if()
-        }
-      }
+      
 
 
       if(correctNumbers[i] == true)
       {
-        Console.WriteLine("You Got ");
+        Console.Write(randomNumbers[i] + ", ");
+        Thread.Sleep(2000);
       }
     }
   }
