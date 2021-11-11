@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 class Program {
 
@@ -10,6 +11,9 @@ class Program {
 
   public static void Main (string[] args) {
     GenerateNumbers();
+    Numbers();
+    userInput();
+    Match();
   }
 
 
@@ -17,7 +21,7 @@ class Program {
 
   static void GenerateNumbers()
   {
-    for(int i = 0; i < length; i++)
+    for(int i = 0; i < randomNumbers.Length; i++)
     {
       Random random = new Random();
       randomNumbers[i] = random.Next(0, max);
@@ -40,7 +44,23 @@ class Program {
   {
     for(int i = 0; i < userNumbers.Length; i++)
     {
-      
+      for(int j = 0; j < userNumbers.Length; j++)
+      {
+        if(userNumbers[i] == randomNumbers[j])
+        {
+          Console.WriteLine("yayy");
+        }
+      }
     }
+  }
+
+  static void Numbers()
+  {
+    for(int i = 0; i < randomNumbers.Length; i++)
+    {
+      Console.WriteLine(randomNumbers[i]);
+    }
+    Console.ReadKey();
+    Thread.Sleep();
   }
 }
