@@ -2,7 +2,6 @@ using System;
 using System.Threading;
 
 class Program {
-
   static int[] randomNumbers = new int[6];
   static int[] userNumbers = new int[6];
   static int max = 200;
@@ -37,9 +36,6 @@ class Program {
     DeclareWinnings();
   }
 
-
-
-
   static void GenerateNumbers()
   {
     // loops for length or array
@@ -51,6 +47,39 @@ class Program {
       randomNumbers[i] = random.Next(0, max);
     }
   }
+
+
+
+  static void validateNumbers()
+  {
+    /* 
+      This Method Validates that all
+      of the numbers in randomNumbers[]
+      are not duplicates
+    */
+
+
+    // nested for loop to comapre every number in array
+    for(int i = 0; i < userNumbers.Length - 1; i++)
+    {
+      for(int j = 0; j < userNumbers.Length - 1; j++)
+      {
+        // if statement checks if the values are the same
+        // only exectues if the iteration of i and j are not the same
+        // if they were then that would be the same value, not a duplicate
+        if((randomNumbers[i] == randomNumbers[j]) && (i != j))
+        {
+          // adds random object
+          Random random = new Random();
+          // sets the value to a random integer
+          randomNumbers[i] = random.Next(0, max);
+        }
+      }
+    }
+  }
+
+
+
 
 
 
@@ -101,21 +130,7 @@ class Program {
     }
   }
 
-  
 
-  static void Numbers()
-  {
-
-    // debug perposses
-
-    // loops through the array printing the values
-    for(int i = 0; i < randomNumbers.Length; i++)
-    {
-      Console.WriteLine(randomNumbers[i]);
-    }
-    Console.ReadKey();
-    Console.Clear();
-  }
 
   static void DeclareWinnings()
   {
@@ -171,32 +186,6 @@ class Program {
 
 
 
-  static void validateNumbers()
-  {
-    /* 
-      This Method Validates that all
-      of the numbers in randomNumbers[]
-      are not duplicates
-    */
-
-
-    // nested for loop to comapre every number in array
-    for(int i = 0; i < userNumbers.Length - 1; i++)
-    {
-      for(int j = 0; j < userNumbers.Length - 1; j++)
-      {
-        // if statement checks if the values are the same
-        // only exectues if the iteration of i and j are not the same
-        // if they were then that would be the same value, not a duplicate
-        if((randomNumbers[i] == randomNumbers[j]) && (i != j))
-        {
-          // adds random object
-          Random random = new Random();
-          // sets the value to a random integer
-          randomNumbers[i] = random.Next(0, max);
-        }
-      }
-    }
-  }
+  
 
 }
